@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>House Mentor</title>
+    <link rel="stylesheet" href="public/styles/fonts.css">
+    <link rel="stylesheet" href="public/styles/navbar.css">
+    <link rel="stylesheet" href="public/styles/mainPage.css">
+    <link rel="stylesheet" href="public/styles/bgimg.css">
+    <link rel="stylesheet" href="public/styles/scrollbar.css">
+    <link rel="stylesheet" href="public/styles/memberSystem.css">
+    <link rel="stylesheet" href="public/styles/kenPC.css">
+    <link rel="stylesheet" href="public/styles/popupWindow.css">
+    <link rel="stylesheet" href="public/styles/menu.css">
+    <!-- facnybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <!-- jquery.js -->
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="public/lib/popupWindow.js"></script>
+    <!-- facnybox -->
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+</head>
+
+<body>
+    <!-- about us -->
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        section {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* section::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 80%;
+            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .4) 90%, rgba(0, 0, 0, .8) 100%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .4) 90%, rgba(0, 0, 0, .8) 100%);
+            z-index: 0;
+        } */
+        section div h1 {
+            font-size: 200%;
+        }
+
+        #section01 {
+            background: url("images/introp/intro_bg1.jpg") center center / cover no-repeat;
+        }
+
+        #section02 {
+            background: url("images/introp/team.jpg") center center / cover no-repeat;
+        }
+
+        .demo a {
+            position: absolute;
+            bottom: 1%;
+            left: 50%;
+            z-index: 2;
+            display: inline-block;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+            color: #fff;
+            font: normal 400 20px/1 'Josefin Sans', sans-serif;
+            letter-spacing: .1em;
+            text-decoration: none;
+            transition: opacity .3s;
+        }
+
+        .demo a:hover {
+            opacity: .6;
+        }
+
+        /* --------------------------------- */
+
+        #section01 a {
+            padding-top: 60px;
+            left: 48.5%;
+        }
+
+        #section01 a span {
+            position: absolute;
+            top: 0;
+            left: 48%;
+            width: 24px;
+            height: 24px;
+            margin-left: -12px;
+            border-left: 1.5px solid #fff;
+            border-bottom: 1.5px solid #fff;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-animation: sdb07 2s infinite;
+            animation: sdb07 2s infinite;
+            opacity: 0;
+            box-sizing: border-box;
+        }
+
+        #section01 a span:nth-of-type(1) {
+            -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+        }
+
+        #section01 a span:nth-of-type(2) {
+            top: 16px;
+            -webkit-animation-delay: .15s;
+            animation-delay: .15s;
+        }
+
+        #section01 a span:nth-of-type(3) {
+            top: 32px;
+            -webkit-animation-delay: .3s;
+            animation-delay: .3s;
+        }
+
+        @-webkit-keyframes sdb07 {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes sdb07 {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        #section02 a {
+            padding-top: 60px;
+            left: 48.5%;
+        }
+
+        #section02 a span {
+            /* margin-top:30px; */
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            width: 46px;
+            height: 46px;
+            margin-left: -23px;
+            border: 1px solid #fff;
+            border-radius: 100%;
+            box-sizing: border-box;
+            transform: rotate(180deg);
+        }
+
+        #section02 a span::after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            content: '';
+            width: 16px;
+            height: 16px;
+            margin: -12px 0 0 -8px;
+            border-left: 1.5px solid #fff;
+            border-bottom: 1.5px solid #fff;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            box-sizing: border-box;
+        }
+
+        /* Position text in the middle of the page/image */
+        .bg-text {
+            font-family: msjh;
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/opacity/see-through */
+            color: white;
+            font-weight: bold;
+            border: 3px solid #f1f1f1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 90%;
+            padding: 20px;
+            font-size: 135%;
+            text-align: center;
+        }
+
+        /* -------------------------------------------------------------------------------------------------------------------------- */
+        /* Three columns side by side */
+
+        .column {
+            z-index: 7;
+            margin-top: 6%;
+            margin-left: 6.7%;
+            float: left;
+            width: 12%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+            /* font-family: Arial, Helvetica, sans-serif; */
+        }
+
+        /* Display the columns below each other instead of side by side on small screens */
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+
+        /* Add some shadows to create a card effect */
+        .card {
+            box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Some left and right padding inside the container */
+        .container {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 0 16px;
+        }
+
+        /* Clear floats */
+        /* .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        } */
+
+        .title {
+            color: rgb(240, 178, 10);
+        }
+
+        .column .card .container h2 {
+            padding-top: 10px;
+        }
+
+        .mask {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 80%;
+            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .4) 90%, rgba(0, 0, 0, 0.8) 100%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .4) 90%, rgba(0, 0, 0, .8) 100%);
+        }
+    </style>
+    <section id="section01" class="demo">
+        <div class="mask"></div>
+        <div class="bg-text">
+            <h1>Our Team</h1>
+            <b class="title" style="font-size: 150%;">Mission</b>
+            <p>本團隊秉持提升生活品質的核心精神，我們相信人工智慧能幫助人類將生活中的瑣事處理好，讓人可以更專注地享受生活。</p>
+            <br>
+            <b class="title" style="font-size: 150%;">Vision</b>
+            <p>House Mentor是家庭指導者，不同於以往管家僅維持一個家庭的正常運作，我們期望利用AI判讀更細微的使用者數據作為行為依據，回饋家庭成員更貼近人性的行為指引。</p>
+        </div>
+        <a href="#section02"><span></span><span></span><span></span>Scroll</a>
+    </section>
+
+    <section id="section02" class="demo">
+        <div class="mask"></div>
+        <div class="row msjh" style="position: absolute;">
+            <!-- dealia -->
+            <div class="column ">
+                <div class="card">
+                    <img src="images/introp/introp_DD.jpg" alt="introp_DD" style="width:100%">
+                    <div class="container">
+                        <h2>陳錦儀</h2>
+                        <b>簡報呈現、前端整合、<br>團隊管理</b>
+                        <p>前端 ：<br>HTML & CSS、JavaScript、jQuery</p><br>
+                        <p>後端 ：<br>Node.js、MySQL</p>
+                        <p>專業技術：<br>YOLOv3、<br>Keras、<br>NLP</p>
+                        <img src="images/introp/contact_DD.png" alt="introp_DD" style="width:100%;">
+
+                        <!-- <p>0905-821-463</p>
+                            <p>dealia.chen@gmail.com</p> -->
+                    </div>
+                </div>
+            </div>
+            <!-- chieh -->
+            <div class="column">
+                <div class="card">
+                    <img src="images/introp/introp_Chieh.jpg" alt="introp_Chieh" style="width:100%">
+                    <div class="container">
+                        <h2>卓子傑</h2>
+                        <b>人臉辨識、人流控管</b><br><br>
+                        <p>前端 ：<br>HTML & CSS、JavaScript、jQuery</p><br>
+                        <p>後端 ：<br>Flask</p>
+                        <p>專業技術：<br>OpenCV、<br>Dlib</p><br>
+                        <img src="images/introp/contact_Chieh.png" alt="introp_DD" style="width:100%;">
+                    </div>
+                </div>
+            </div>
+            <!-- allen -->
+            <div class="column">
+                <div class="card">
+                    <img src="images/introp/introp_Allen.jpg" alt="introp_Allen" style="width:100%">
+                    <div class="container">
+                        <h2>林庭寬</h2>
+                        <b>模型訓練、食物辨識</b><br><br>
+                        <p>前端 ：<br>HTML & CSS、JavaScript、jQuery、KUTE.js</p>
+                        <p style="margin-top: 30px;">後端 ：<br>Flask、MySQL</p>
+                        <p>專業技術：<br>Tensorflow、<br>Keras、<br>Scikit-learn</p>
+                        <img src="images/introp/contact_Allen.png" alt="introp_DD" style="width:100%;">
+                    </div>
+                </div>
+            </div>
+            <!-- goofy -->
+            <div class="column">
+                <div class="card">
+                    <img src="images/introp/introp_Goofy.jpg" alt="introp_Goofy" style="width:100%">
+                    <div class="container">
+                        <h2>黃奕甯</h2>
+                        <b>資料爬蟲、食物推薦</b><br><br>
+                        <p>前端 ：<br>HTML & CSS、JavaScript、jQuery</p><br>
+                        <p>後端 ：<br>Flask、MySQL</p>
+                        <p>專業技術：<br>Tensorflow、<br>Keras、<br>Scikit-learn</p>
+                        <img src="images/introp/contact_Goofy.png" alt="introp_DD" style="width:100%;">
+                    </div>
+                </div>
+            </div>
+            <!-- ken -->
+            <div class="column">
+                <div class="card">
+                    <img src="images/introp/introp_Ken.jpg" alt="introp_Ken" style="width:100%">
+                    <div class="container">
+                        <h2>黃耀邦</h2>
+                        <b>姿勢偵測、後端整合、<br>技術指導</b>
+                        <p>前端 ：<br>HTML & CSS、JavaScript、jQuery</p><br>
+                        <p>後端 ：<br>Node.js、MySQL</p>
+                        <p>專業技術：<br>OpenCV、OpenPose、Chat-bot、NLP、Raspberry-Pi</p>
+                        <img src="images/introp/contact_Ken.png" alt="introp_DD" style="width:100%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#section01"><span></span>Back</a>
+
+    </section>
+    <script>
+        $(function () {
+            $('a[href*=#]').on('click', function (e) {
+                e.preventDefault();
+                $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top }, 500, 'linear');
+            });
+        });
+    </script>
+
+
+    <!-- navbar -->
+    <div class="mainPageNavbar whiteMoonFont" id="navbar" style="position: fixed;">
+        <a class="navbarText" href="/register">Register</a>
+        <a class="navbarText" href="/login">Log in</a>
+        <a class="navbarText popup" onclick="popEmailLink()">Contact us
+            <span class="popuptext whiteYuGothM" id="myPopup">aien0501aura@gmail.com</span>
+        </a>
+        <a class="navbarText" href="/solution">Solution</a>
+        <a class="navbarText" href="/aboutus">About us</a>
+        <a class="navbarText" href="/housementor/">Home</a>
+    </div>
+    <script>
+        // When the user clicks on div, open the popup
+        function popEmailLink() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+        $("#navbar").css("background-image", "linear-gradient(rgba(29, 23, 18, 0.9), rgba(129, 96, 4, 0.5))");
+    </script>
+    <style>
+        .navbarText:hover {
+            /* color: red; */
+            color: burlywood;
+        }
+    </style>
+</body>
+
+</html>
