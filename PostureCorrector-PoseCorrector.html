@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>House Mentor</title>
+    <link rel="stylesheet" href="public/styles/fonts.css">
+    <link rel="stylesheet" href="public/styles/navbar.css">
+    <link rel="stylesheet" href="public/styles/mainPage.css">
+    <link rel="stylesheet" href="public/styles/bgimg.css">
+    <link rel="stylesheet" href="public/styles/scrollbar.css">
+    <link rel="stylesheet" href="public/styles/memberSystem.css">
+    <link rel="stylesheet" href="public/styles/kenPC.css">
+    <link rel="stylesheet" href="public/styles/popupWindow.css">
+    <link rel="stylesheet" href="public/styles/menu.css">
+    <!-- facnybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <!-- jquery.js -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="public/lib/popupWindow.js"></script>
+    <!-- facnybox -->
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+</head>
+
+<body>
+    <img class="kenPCBGI" src="public/images/kenPC/kenPCBGI.png" alt="kenPCBGI">
+
+
+
+
+
+
+    <div class="whiteMoonFont PC_D3title PC_D3titleBG">YOGA - WARRIOR 2</div>
+    <!-- correct pose -->
+    <img class="PC_D3correctPoseF" src="public/images/kenPC/warrior2F_correctPose.png" alt="warrior2F_correctPose">
+    <img class="PC_D3plotSampleR" src="public/images/kenPC/plotSampleR.png" alt="plotSampleR">
+    <div class="whiteMoonFont PC_D3title PC_D3text" style="top: 30%;">CORRECT POSE</div>
+    <div class="whiteMoonFont PC_D3title PC_D3text" style="top: 40%;">
+        TIME : <strong class="PC_D3timer">10</strong> S
+    </div>
+    <div class="whiteMoonFont PC_D3title PC_D3text" style="top: 50%; font-size: 150%;" id="msg">PLEASE WALK INTO CAMERA.
+    </div>
+    <img class="PC_D3correctPoseL" src="public/images/kenPC/warrior2L_correctPose.png" alt="warrior2F_correctPose">
+
+    <!-- streaming control -->
+    <!-- <button class="stopStreamBtn" onclick="stopStream()"
+    style="text-align: center; position: absolute; top: 50%; left: 10%;">
+    stop
+</button> -->
+
+    <!-- current pose -->
+    <img class="PC_D3currentPoseF" src="public/images/kenPC/warrior2F_waitingForStream.png" alt="waitingForStream">
+    <img class="PC_D3plotSampleB" src="public/images/kenPC/plotSampleB.png" alt="plotSampleB">
+    <div class="whiteMoonFont PC_D3title PC_D3text" style="top: 70%;">CURRENT POSE</div>
+    <div class="whiteMoonFont PC_D3title PC_D3text" style="top: 90%;">Accuracy: <span id="accuracy">00</span> %</div>
+
+    <div class="whiteMoonFont PC_D3title PC_D3text" style="top: 80%;">
+        TIME : <strong class="PC_D3timer" id="timer">0</strong> S
+    </div>
+    <img class="PC_D3currentPoseL" src="public/images/kenPC/warrior2L_waitingForStream.png" alt="warrior2L_currentPose">
+
+    <form class="hiddenForm" id="form">
+        <input type="text" name="streamStatus" id="streamStatus" value="close"><!-- value == open >>> strart stream  -->
+    </form>
+
+
+    <script>
+        $("#navbar").css("background-image", "linear-gradient(rgba(29, 23, 18, 0.9), rgba(68, 3, 3, 0.4))");
+        // start stream
+        // $.post('/startStream', $('#form').serialize());
+        let streamStatus = $('#streamStatus').val();
+        var timer = 0;
+        var sleep = 0.5;
+        $('#accuracy').text('00');
+        var timerID = setInterval(function () {
+            if (streamStatus == 'open') {
+                $.post('/startStream', (data) => {
+                    let accuracyF = parseInt(data.accuracyF);
+                    console.log(accuracyF);
+
+                    let accuracyL = parseInt(data.accuracyL);
+                    if (data.F != 'waitingForStream') {
+                        console.log(data.F);
+                        $('.PC_D3currentPoseF').attr("src", "../../ploted/F/" + data.F);
+                        $('.PC_D3currentPoseF').css("opacity", "1");
+                        if (accuracyF == 0) {
+                            $('#msg').text('Please walk at the start point.');
+                        } else {
+                            $('#msg').text('Please fit the correct pose.');
+                        }
+                        if (accuracyF < 0) {
+                            $('#accuracy').text('00');
+                        } else {
+                            $('#accuracy').text(accuracyF);
+                        }
+                    }
+                    if (data.L != 'waitingForStream') {
+                        console.log(data.L);
+                        $('.PC_D3currentPoseL').attr("src", "../../ploted/L/" + data.L);
+                        $('.PC_D3currentPoseL').css("opacity", "1");
+                    }
+                    if (accuracyF > 80) {
+                        timer += sleep;
+                    } else {
+                        timer = timer;
+                    }
+                    if (timer % 1 == 0) {
+                        $('#timer').text(timer);
+                        if (timer == 10) {
+                            stopStream();
+                            $.post('/recordPose', (data) => {
+                                console.log(data.message);
+                                $('#msg').css("color", "red");
+                                $('#msg').text(data.message);
+                                setTimeout(function () {
+                                    window.location.href = "/PostureCorrector";
+                                }, 3000);
+                            });
+                        }
+                    }
+                });
+            }
+        }, sleep * 1000);
+
+        function stopStream(inputBut) {
+            $.post('/stopStream', (data) => {
+                $('#streamStatus').val(data.status);
+                // console.log(data.status);
+                console.log($('#streamStatus').val());
+            });
+            window.clearTimeout(timerID);
+            $('.PC_D3currentPoseF').attr("src", "../../images/kenPC/warrior2F_waitingForStream.png");
+            $('.PC_D3currentPoseF').css("opacity", "0.75");
+            $('.PC_D3currentPoseL').attr("src", "../../images/kenPC/warrior2L_waitingForStream.png");
+            $('.PC_D3currentPoseL').css("opacity", "0.75");
+            return false
+        }
+    </script>
+
+    <!-- navbar -->
+    <div class="mainPageNavbar whiteMoonFont" id="navbar" style="position: fixed;">
+        <a class="navbarText" href="/housementor/register">Register</a>
+        <a class="navbarText" href="/housementor/login">Log in</a>
+        <a class="navbarText popup" onclick="popEmailLink()">Contact us
+            <span class="popuptext whiteYuGothM" id="myPopup">aien0501aura@gmail.com</span>
+        </a>
+        <a class="navbarText" href="/housementor/solution">Solution</a>
+        <a class="navbarText" href="/housementor/aboutus">About us</a>
+        <a class="navbarText" href="/housementor/">Home</a>
+    </div>
+    <script>
+        // When the user clicks on div, open the popup
+        function popEmailLink() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+        $("#navbar").css("background-image", "linear-gradient(rgba(29, 23, 18, 0.9), rgba(68, 3, 3, 0.4))");
+    </script>
+    <style>
+        .navbarText:hover {
+            color: red;
+        }
+    </style>
+</body>
+
+</html>
