@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>House Mentor</title>
+    <link rel="stylesheet" href="public/styles/fonts.css">
+    <link rel="stylesheet" href="public/styles/navbar.css">
+    <link rel="stylesheet" href="public/styles/mainPage.css">
+    <link rel="stylesheet" href="public/styles/bgimg.css">
+    <link rel="stylesheet" href="public/styles/scrollbar.css">
+    <link rel="stylesheet" href="public/styles/memberSystem.css">
+    <link rel="stylesheet" href="public/styles/kenPC.css">
+    <link rel="stylesheet" href="public/styles/popupWindow.css">
+    <link rel="stylesheet" href="public/styles/menu.css">
+    <!-- facnybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <!-- jquery.js -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="public/lib/popupWindow.js"></script>
+    <!-- facnybox -->
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <style>
+        body {
+            TEXT-ALIGN: center;
+        }
+
+        #center {
+            MARGIN-RIGHT: auto;
+            MARGIN-LEFT: auto;
+        }
+
+        .odbox {
+            border-radius: 20px;
+            border: 1px solid whitesmoke;
+            background-color: rgba(255, 255, 255, 0.7);
+
+            height: 500px;
+            float: left;
+            padding: auto;
+            margin-top: 10%;
+            margin-left: 5%;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: Broadway;
+            font-size: 20pt;
+            color: rgb(58, 55, 55);
+        }
+
+        /*  */
+        button {
+            border: 1px solid gray;
+        }
+
+        input[type="file"] {
+            position: fixed;
+            right: 100%;
+            bottom: 100%;
+        }
+
+        .selectbutton {
+
+            border: 1px solid #908c68;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-family: arial, helvetica, sans-serif;
+            padding: 10px 10px 10px 10px;
+            text-decoration: none;
+            display: inline-block;
+            text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+            font-weight: bold;
+            color: #FFFFFF;
+            background-color: #a9a588;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#a9a588), to(#8e865b));
+            background-image: -webkit-linear-gradient(top, #a9a588, #8e865b);
+            background-image: -moz-linear-gradient(top, #a9a588, #8e865b);
+            background-image: -ms-linear-gradient(top, #a9a588, #8e865b);
+            background-image: -o-linear-gradient(top, #a9a588, #8e865b);
+            background-image: linear-gradient(to bottom, #a9a588, #8e865b);
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#a9a588, endColorstr=#8e865b);
+            /* display: inline-block;
+                padding: 6px 12px;
+                cursor: pointer; */
+        }
+
+        .selectbutton:hover {
+            border: 1px solid #767255;
+            background-color: #938e6b;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#938e6b), to(#6f6947));
+            background-image: -webkit-linear-gradient(top, #938e6b, #6f6947);
+            background-image: -moz-linear-gradient(top, #938e6b, #6f6947);
+            background-image: -ms-linear-gradient(top, #938e6b, #6f6947);
+            background-image: -o-linear-gradient(top, #938e6b, #6f6947);
+            background-image: linear-gradient(to bottom, #938e6b, #6f6947);
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#938e6b, endColorstr=#6f6947);
+            /* display: inline-block;
+                padding: 6px 12px;
+                cursor: pointer; */
+        }
+
+        .custom-file-upload {
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <img class="mainPageBGI" src="public/images/ODimg_dk.png" alt="">
+
+    <div class="whiteMoonFont PC_D2title PC_D2titleBG">Object Detection
+    </div>
+    <br>
+    <!-- div需要補位置 -->
+    <div class="odbox" style="width:250px">
+        <h2>Step 1: <br>Define List</h2>
+        <button type="button" class="">
+            <div class=""><img src="public/images/OD/icon_umbrella.png" width=60px height=60px onclick="">
+            </div>
+        </button>
+        <button type="button" class="">
+            <div class=""><img src="public/images/OD/icon_key2.png" width=60px height=60px onclick="">
+            </div>
+        </button>
+        <br>
+        <button type="button" class="">
+            <div class=""><img src="public/images/OD/icon_calculator.png" width=60px height=60px onclick="">
+            </div>
+        </button>
+        <button type="button" class="">
+            <div class=""><img src="public/images/OD/icon_cellphone.png" width=60px height=60px onclick="">
+            </div>
+        </button>
+        <br>
+        <button type="button" class="">
+            <div class=""><img src="public/images/OD/icon_coinpurse.png" width=60px height=60px onclick="">
+            </div>
+        </button>
+        <button type="button" class="">
+            <div class=""><img src="public/images/OD/icon_question.png" width=60px height=60px onclick="">
+            </div>
+        </button>
+    </div>
+
+
+    <div class="odbox" style="width:400px">
+        <h2>Step 2: <br>Upload Image</h2>
+        <form runat="server" method="POST" enctype="multipart/form-data">
+            <!-- <input type="file" class="selectbutton" name="fileToUpload" style="height: 20px" > -->
+
+            <label for="imgInp" class="selectbutton">
+                Select Image
+            </label>
+            <input id="imgInp" value="Select Image" type="file" name="fileToUpload" style="height: 40px" />
+
+            <input type="submit" class="selectbutton" value="Upload" name="submit" style="height: 35px">
+            <img id="blah" src="" width=300 />
+
+            <!-- id="imgInp" -->
+        </form>
+    </div>
+
+    <div class="odbox" style="width:400px">
+        <h2>Step 3:<br>Results</h2>
+
+    </div>
+
+
+    <div class="odbox" style="width:400px">
+        <h2>Step 4:<br>Add Your Note</h2>
+
+
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+    </script>
+
+
+    <!-- navbar -->
+    <div class="mainPageNavbar whiteMoonFont" id="navbar" style="position: fixed;">
+        <a class="navbarText" href="/housementor/register">Register</a>
+        <a class="navbarText" href="/housementor/login">Log in</a>
+        <a class="navbarText popup" onclick="popEmailLink()">Contact us
+            <span class="popuptext whiteYuGothM" id="myPopup">aien0501aura@gmail.com</span>
+        </a>
+        <a class="navbarText" href="/housementor/solution">Solution</a>
+        <a class="navbarText" href="/housementor/aboutus">About us</a>
+        <a class="navbarText" href="/housementor/">Home</a>
+    </div>
+    <script>
+        // When the user clicks on div, open the popup
+        function popEmailLink() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+    </script>
+
+    <script>
+        $("#navbar").css("background-image", "linear-gradient(rgba(29, 23, 18, 0.9), rgba(68, 3, 3, 0.4))");
+    </script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#imgInp").change(function () {
+            readURL(this);
+        });
+    </script>
