@@ -27,6 +27,314 @@
 </head>
 
 <body>
+
+
+    <!-- home -->
+    <img class="mainPageBGI" src="../images/mainPageBGI.png" alt="mainPageBGI">
+
+    <div class="whiteMoonFont mainPageTitle">HOUSE MENTOR</div>
+    <div class="whiteMoonFont mainPageSubTitle">WE LOVES THE JOBS YOU HATE</div>
+    <div class="whiteMoonFont mainPageKeyWords">
+        Proffessional<br>
+        Affordable<br>
+        Reliable<br>
+    </div>
+    <div class="whiteMoonFont mainPageText">Cleaning your<br>worries away</div>
+    <!-- menu -->
+    <style>
+        #screen {
+            position: absolute;
+            border: 0px solid #000;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
+    <div class='selector'>
+        <ul>
+            <li>
+                <input id='c1' type='checkbox'>
+                <label for='c1' onclick="clcikAnchor(this)">
+                    <a href="http://127.0.0.1:8000/food_recommendation" class="removeUnderLine"><img
+                            src="icon/restaurant.png" alt="calories"
+                            style="color:aliceblue;width: 55px; margin-top:20px"></a>
+                </label>
+            </li>
+            <li>
+                <input id='c2' type='checkbox'>
+                <label for='c2' onclick="clcikAnchor(this)">
+                    <a href="/PostureCorrector" class="removeUnderLine"><img src="icon/yoga.png" alt="pose"
+                            style="color:aliceblue;width: 55px; margin-top:20px"></a>
+                </label>
+            </li>
+            <li>
+                <input id='c3' type='checkbox'>
+                <label for='c3' onclick="openForm()">
+                    <img src="icon/chat.png" alt="chat" style="color:aliceblue;width: 40px; margin-top:30px">
+                </label>
+            </li>
+            <li>
+                <input id='c4' type='checkbox'>
+                <label for='c4'></label>
+            </li>
+            <li>
+                <input id='c5' type='checkbox'>
+                <label for='c5'></label>
+            </li>
+            <li>
+                <input id='c6' type='checkbox'>
+                <label for='c6'></label>
+            </li>
+            <li>
+                <input id='c7' type='checkbox'>
+                <label for='c7' onclick="clcikAnchor(this)">
+                    <a href="/ObjectDetection" class="removeUnderLine"><img src="icon/obj.png" alt="objectdetection"
+                            style="color:aliceblue;width: 50px; margin-top:18px"></a>
+                </label>
+            </li>
+            <li>
+                <input id='c8' type='checkbox'>
+                <label for='c8' onclick="clcikAnchor(this)">
+                    <a href="http://127.0.0.1:8000/" class="removeUnderLine"><img src="icon/face-recognition.png"
+                            alt="face-recognition" style="color:aliceblue;width: 55px; margin-top:22px"></a>
+
+                </label>
+            </li>
+        </ul>
+        <button><canvas id="screen" width="360px" height="360px" style="border-radius: 180px;"></canvas></button>
+    </div>
+    <div class="whiteYuGothM"
+        style="position: absolute; color: white; right: 6.5%; bottom: -15.5%; font-size: 400%;cursor: pointer;"
+        onclick="clickBtn(this)"><img src="../images/auraicon05.png" alt="webicon3" width="390px"></div>
+
+    <script>
+        var nbOptions = 6;
+        var angleStart = -360;
+
+        // jquery rotate animation
+        function rotate(li, d) {
+            $({
+                d: angleStart
+            }).animate({
+                d: d
+            }, {
+                step: function (now) {
+                    $(li)
+                        .css({
+                            transform: 'rotate(' + now + 'deg)'
+                        })
+                        .find('label')
+                        .css({
+                            transform: 'rotate(' + (-now) + 'deg)'
+                        });
+                },
+                duration: 0
+            });
+        }
+
+        // show / hide the options
+        function toggleOptions(s) {
+            $(s).toggleClass('open');
+            var li = $(s).find('li');
+            var deg = $(s).hasClass('half') ? 180 / (li.length - 1) : 360 / li.length;
+            for (var i = 0; i < li.length; i++) {
+                var d = $(s).hasClass('half') ? (i * deg) - 90 : i * deg;
+                $(s).hasClass('open') ? rotate(li[i], d) : rotate(li[i], angleStart);
+            }
+        }
+
+        $('.selector button').click(function (e) {
+            toggleOptions($(this).parent());
+        });
+
+        setTimeout(function () {
+            toggleOptions('.selector');
+        }, 100); //@ sourceURL=pen.js
+
+        function clcikAnchor(inputLabel) {
+            // console.log(inputLabel);
+            // console.log(inputLabel.children[0]);
+            inputLabel.children[0].click();
+        }
+
+        function clickBtn() {
+            $('#screen').click();
+        }
+
+        const canvas = document.querySelector("#screen");
+        const ctx = canvas.getContext("2d");
+
+        /* constants */
+        const BG_COLOR = "#7242ca";
+        // const BG_COLOR = "#ffffff";
+        const COLOR = "#ffffff";
+        // const COLOR = "#7242ca";
+
+        /* settings */
+        const CIRCLE_LINE_WIDTH = 5;
+        const CICLE_RADIUS = 180;
+
+        const POINTS_AMOUNT = 100;
+        const POINTS_RADIUS = 5;
+
+        /* util functions */
+        const degToRad = deg => deg * (Math.PI / 180);
+        const getPos = deg => {
+            return {
+                x: Math.cos(deg) * CICLE_RADIUS,
+                y: Math.sin(deg) * CICLE_RADIUS
+            }
+        }
+
+        const drawCircle = (x, y, lineW, rad, stroke, fill) => {
+            ctx.beginPath();
+            ctx.lineWidth = lineW;
+            ctx.arc(x, y, rad, 0, 2 * Math.PI, false);
+            if (stroke) ctx.stroke();
+            if (fill) ctx.fill();
+            ctx.closePath();
+        }
+
+        const drawLine = (x1, y1, x2, y2) => {
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+            ctx.closePath();
+        }
+
+        /* variables */
+        let pointsArrL = [];
+        let pointsArrR = [];
+
+        let wave = 280;
+        let pulse = 1;
+
+        /* variable init */
+        for (let i = 0; i < POINTS_AMOUNT; i++) {
+            let rotationDeg = i * degToRad(360 / (POINTS_AMOUNT * 4));
+            let pos = getPos(rotationDeg);
+
+            pointsArrL.push({
+                x: pos.x,
+                y: pos.y,
+                rotationDeg
+            });
+
+            pointsArrR.push({
+                x: -pos.x,
+                y: -pos.y,
+                rotationDeg
+            })
+        }
+
+        /* loop */
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        const loop = () => {
+            ctx.fillStyle = BG_COLOR;
+            ctx.fillRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
+
+            ctx.strokeStyle = COLOR;
+            drawCircle(0, 0, CIRCLE_LINE_WIDTH, CICLE_RADIUS, true, false);
+
+            ctx.fillStyle = COLOR;
+            for (let i = 0; i < POINTS_AMOUNT; i++) {
+                let pointL = pointsArrL[i];
+                let pointR = pointsArrR[i];
+
+                let rotationDegL = pointL.rotationDeg;
+                let rotationDegR = pointR.rotationDeg;
+
+                // drawCircle(pointL.x, pointL.y, 0, POINTS_RADIUS, false, true);
+                // drawCircle(pointR.x, pointR.y, 0, POINTS_RADIUS, false, true);
+
+                ctx.lineWidth = 1.5 + Math.sin(i * (degToRad(360 / POINTS_AMOUNT)));
+                //ctx.strokeStyle = `hsla(289, ${80 + Math.sin(wave) * 10}%, 50%, 1)`;
+                drawLine(pointL.x, pointL.y, pointR.x, pointR.y);
+
+                rotationDegL += degToRad(0.25 + Math.sin(degToRad(wave / Math.PI / 2)));
+                const newPosL = getPos(rotationDegL);
+
+                rotationDegR += -degToRad(0.13 + Math.sin(degToRad(wave / Math.PI / 4)));
+                const newPosR = getPos(rotationDegR);
+
+                pointsArrL[i].x = newPosL.x;
+                pointsArrL[i].y = newPosL.y;
+                pointsArrL[i].rotationDeg = rotationDegL;
+
+                pointsArrR[i].x = newPosR.x;
+                pointsArrR[i].y = newPosR.y;
+                pointsArrR[i].rotationDeg = rotationDegR;
+            }
+
+            wave = (wave > 360) ? 0 : wave + pulse;
+            requestAnimationFrame(loop);
+        }
+
+        loop();
+
+    </script>
+
+    <!-- popupWindow -->
+    <div class="wrapper" id="myForm">
+        <div class="chat-box">
+            <div class="chat-head">
+                <!-- <h2>Chat Box</h2> -->
+                <img src="https://maxcdn.icons8.com/windows10/PNG/16/Arrows/angle_down-16.png" title="Expand Arrow"
+                    width="16" onclick="closeForm()">
+            </div>
+            <div id="divDetail" class="chat-body msjh" style="font-size: 110%;">
+                <div class="msg-insert">
+                    <div class="msg-receive">嗨, 我是 AURA!<br> 今天過的好嗎?</div>
+                </div>
+                <div class="chat-text">
+                    <textarea placeholder="Send" name="userMsg"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        closeForm()
+        $(function () {
+            var arrow = $('.chat-head img');
+            var textarea = $('.chat-text textarea');
+            textarea.keypress(function (event) {
+                var $this = $(this);
+
+                if (event.keyCode == 13 && !event.shiftKey) {
+                    var msg = $this.val();
+
+                    $('.msg-insert').append("<div class='msg-send'>" + msg + "</div>");
+
+                    $.post('/userRes', $this.serialize(), (data) => {
+                        $('.msg-insert').append("<div class='msg-receive'>" + data.botRes +
+                            "</div>");
+                        $("#divDetail").scrollTop($('#divDetail').prop('scrollHeight'));
+                    });
+                    $this.val('');
+                    textarea.val('');
+
+
+                    $("#divDetail").scrollTop(
+                        $('#divDetail').prop('scrollHeight')
+                        //     function () {
+                        //     return this.scrollHeight;
+                        // }
+                    );
+                    return false
+                }
+            });
+
+        });
+    </script>
+
+
+
+
+
+    <!-- navbar -->
     <div class="mainPageNavbar whiteMoonFont" id="navbar" style="position: fixed;">
         <a class="navbarText" href="/register">Register</a>
         <a class="navbarText" href="/login">Log in</a>
@@ -44,3 +352,6 @@
             popup.classList.toggle("show");
         }
     </script>
+</body>
+
+</html>
