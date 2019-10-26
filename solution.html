@@ -27,11 +27,248 @@
 </head>
 
 <body>
+    <script>
+        $(document.body).attr("background", "public/images/solution/solutionBGI_3.jpg")
+
+
+        $(function () {
+            $("a[href*=#]").click(function () {
+                var target = $(this.hash);
+                $("html, body").animate({
+                    scrollTop: target.offset().top
+                }, 500);
+                return false;
+            });
+        });
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            /* background: linear-gradient(#eeeeee, #cccccc); */
+            overflow: initial;
+            background-attachment: fixed;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+
+        }
+
+        .introInfo {
+            background-color: rgb(255, 255, 255, 0.8);
+            /* background-color: rgb(21, 5, 27); */
+            /* border: white 1px solid; */
+            width: 1050px;
+            height: 400px;
+            text-align: center;
+        }
+
+        .innertext {
+            line-height: 48px;
+            margin: auto 36px;
+            font-family: 微軟正黑體;
+            color: rgb(0, 0, 0);
+        }
+
+        a {
+            margin: auto;
+        }
+
+
+        #goTopBtn {
+            text-align: center;
+            width: 60px;
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            /* z-index: 99; */
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: rgb(97, 49, 230);
+            opacity: 0.8;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #goTopBtn:hover {
+            /* background-color: #555; */
+            opacity: 1;
+        }
+
+        .solutionTitle {
+            margin: 0 auto;
+            width: 1050px;
+            font-size: 500%;
+            letter-spacing: 10px;
+            color: black;
+            position: static;
+            text-align: center;
+            margin-top: 110px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .solutionSubTitle {
+            font-size: 140%;
+        }
+
+        .icons {
+            margin: 0px auto 0px auto;
+            /* height: 150px; */
+            width: 800px;
+            /* display: flex; */
+            align-items: center;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+
+        .solutionIcon {
+            height: 80px;
+            margin: 0px 20px 0px 20px;
+        }
+
+        hr {
+            color: white;
+            width: 1050px;
+        }
+    </style>
+    <div class="whiteYuGothM solutionTitle"><span style="padding-left: 45px;">Solution</span></div>
+
+    <div class="icons">
+        <a href="#obj">
+            <img class="solutionIcon" src="public/icon/obj_black.png" alt="objectdetection">
+        </a>
+        <a href="#facerecg">
+            <img class="solutionIcon" src="public/icon/face-recognition_black.png" alt="face-recognition">
+        </a>
+        <a href="#food">
+            <img class="solutionIcon" src="public/icon/restaurant_black.png" alt="calories">
+        </a>
+        <a href="#yoga">
+            <img class="solutionIcon" src="public/icon/yoga_black.png" alt="pose">
+        </a>
+        <a href="#chatbot">
+            <img class="solutionIcon" src="public/icon/chat_black.png" alt="chat">
+        </a>
+    </div>
+    <hr>
+    <div id="obj" class="introInfo" style="margin:50px auto 50px auto;">
+        <div style="width: 400px;height: 400px;float:left ">
+            <img style="width: auto; height: auto; max-width: 100%; max-height: 100%;"
+                src="public//images/solution/obj.jpg" alt="">
+        </div>
+        <div style="display: flex; align-items: center;height: 400px;">
+            <h2 class="innertext">
+                <span class="solutionSubTitle">攜帶物品偵測</span><br>
+                只要是人都容易忘東忘西，常常花很多時間在找隱藏在雜物堆的手機、錢包、鑰匙等等，我們希望能有一個更有效率的方法讓使用者不再忘記重要的物品每天出門前只要拍照做個掃描，即可馬上得知是否東西齊備，不齊備的東西也可經由常用的位置快速找到，<br>
+                出門不再傷腦筋……
+            </h2>
+        </div>
+    </div>
+    <hr>
+    <div id="facerecg" class="introInfo" style="margin:50px auto 50px auto;">
+        <div style="width: 400px;height: 400px;float:right ">
+            <img style="width: auto; height: auto; max-width: 100%; max-height: 100%;"
+                src="public/images/solution/door.jpg" alt="">
+        </div>
+        <div style="display: flex; align-items: center;height: 400px;">
+            <h2 class="innertext">
+                <span class="solutionSubTitle">人臉辨識</span><br>
+                門鈴響起手頭工作正忙?<br>
+                包裹來了沒人在家?<br>
+                家中成員行蹤難以掌握? <br>
+                <br>
+                Aura一站式管理所有進出家中的成員給你
+                「居安」，<br>「思危」交給 Aura
+            </h2>
+        </div>
+    </div>
+    <hr>
+    <div id="food" class="introInfo" style="margin:50px auto 50px auto;">
+        <div style="width: 400px;height: 400px;float:left ">
+            <img style="width: auto; height: auto; max-width: 100%; max-height: 100%;"
+                src="public/images/solution/foods.jpg" alt="">
+        </div>
+        <div style="display: flex; align-items: center;height: 400px;">
+            <h2 class="innertext">
+                <span class="solutionSubTitle">食物辨識推薦</span><br>
+                目前國人生活日趨於靜態，熱能消耗減低。再者隨著各類食物的便利性及國人飲食型態的改變。導致慢性疾病患者及肥胖者不減反增。<br>
+                <br>
+                「食在精彩，活出健康」，<br>讓Aura好好為您的健康把關吧！
+            </h2>
+        </div>
+    </div>
+    <hr>
+    <div id="yoga" class="introInfo" style="margin:50px auto 50px auto;">
+        <div style="width: 400px;height: 400px;float:right ">
+            <img style="width: auto; height: auto; max-width: 100%; max-height: 100%;"
+                src="public/images/solution/sports.jpg" alt="">
+        </div>
+        <div style="display: flex; align-items: center;height: 400px;">
+            <h2 class="innertext">
+                <span class="solutionSubTitle">姿勢偵測校正</span><br>
+                隨著健康意識抬頭，運動熱潮掀起，YouTube上開始出現許多專職健身教學影片，這某種程度反映了市場所需要的是即時、精確的指導員。<br>
+                <br>
+                因此，我們開始思考人工智慧是否能扮演這樣的角色？
+            </h2>
+        </div>
+    </div>
+    <hr>
+    <div id="chatbot" class="introInfo" style="margin:50px auto 50px auto;">
+        <div style="width: 400px;height: 400px;float:left ">
+            <img style="width: auto; height: auto; max-width: 100%; max-height: 100%;"
+                src="public/images/solution/auraicon04.jpg" alt="">
+        </div>
+        <div style="display: flex; align-items: center;height: 400px;">
+            <h2 class="innertext">
+                <span class="solutionSubTitle">聊天機器人</span><br>
+                建議您可選擇：
+
+                1."威望身寶寧"
+                它含有EPA, DHA 蒜素 (ALLICIN)
+
+                2."賜多利奶粉"
+                它含有總免疫球蛋白 G 、 特定免疫球蛋 G
+
+                3."雙鶴極品靈芝(膠囊及粉劑)"
+                它含有靈芝三帖類、 靈芝多醣體
+            </h2>
+        </div>
+    </div>
+    <button class="whiteMoonFont" onclick="topFunction()" id="goTopBtn" title="Go to top"><img src="public/icon/gotop.svg"
+            alt="gotop">Top</button>
 
 
 
 
 
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("goTopBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 500);
+        }
+    </script>
 
     <!-- navbar -->
     <div class="mainPageNavbar whiteMoonFont" id="navbar" style="position: fixed;">
