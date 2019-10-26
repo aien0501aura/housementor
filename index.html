@@ -1,5 +1,15 @@
-<link rel="import" href="parts/1_head.html">
-<link rel="import" href="parts/2_navbar.html">
-<link rel="import" href="test.html">
-</body>
-</html>
+<head>
+    <link rel="import" href="parts/1_head.html">
+    <link rel="import" href="parts/2_navbar.html">
+    <link rel="import" href="test.html">
+</head>
+
+<script>
+    var link = document.querySelector('link[rel="import"]');
+    var content = link.import;
+
+    // Grab DOM from warning.html's document.
+    var el = content.querySelector('.test');
+
+    document.body.appendChild(el.cloneNode(true));
+</script>
