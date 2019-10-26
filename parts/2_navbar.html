@@ -1,18 +1,19 @@
-<div class="mainPageNavbar whiteMoonFont" id="navbar" style="position: fixed;">
-    <a class="navbarText" href="/register">Register</a>
-    <a class="navbarText" href="/login">Log in</a>
-    <a class="navbarText popup" onclick="popEmailLink()">Contact us
-        <span class="popuptext whiteYuGothM" id="myPopup">aien0501aura@gmail.com</span>
-    </a>
-    <a class="navbarText" href="/solution">Solution</a>
-    <a class="navbarText" href="/aboutus">About us</a>
-    <a class="navbarText" href="/">Home</a>
-</div>
-
-<script>
-    // When the user clicks on div, open the popup
-    function popEmailLink() {
-        var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
-    }
-</script>
+<template>
+    <div class="mainPageNavbar whiteMoonFont" id="navbar" style="position: fixed;">
+        <a class="navbarText" href="/register">Register</a>
+        <a class="navbarText" href="/login">Log in</a>
+        <a class="navbarText popup" onclick="popEmailLink()">Contact us
+            <span class="popuptext whiteYuGothM" id="myPopup">aien0501aura@gmail.com</span>
+        </a>
+        <a class="navbarText" href="/solution">Solution</a>
+        <a class="navbarText" href="/aboutus">About us</a>
+        <a class="navbarText" href="/">Home</a>
+    </div>
+    <script>
+        // When the user clicks on div, open the popup
+        function popEmailLink() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+    </script>
+</template>
