@@ -37,29 +37,28 @@
     </div>
     <div class="whiteMoonFont mainPageText">Cleaning your<br>worries away</div>
 
-
     <div class="loginDiv">
-        <form method="post">
+        <form enctype="application/x-www-form-urlencoded" method="post">
             <div class="loginSubDiv loginCenter">
-                <b>Log in</b>
+                <b>Register</b>
             </div>
             <div class="loginSubDiv">
                 <label for="account">Account(Email) :</label>
-                <input type="email" class="loginAccount" id="loginAccount" name="loginAccount"
-                    placeholder="Enter Account(Email)" autocomplete="off">
-
+                <input type="email" class="loginAccount" id="registerAccount" name="registerAccount"
+                    placeholder="Enter Account(Email)"><br><br>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
             </div>
             <div class="loginSubDiv">
                 <label for="password">Password :</label>
-                <input type="password" class="loginPassword" id="loginPassword" name="loginPassword"
-                    placeholder="Enter Password"><br><br>
+                <input type="password" class="loginPassword" id="registerPassword" name="registerPassword"
+                    placeholder="Enter Password">
             </div>
             <div class="loginSubDiv loginCenter">
                 <button type="submit" class="loginBtn">Submit</button>
             </div>
         </form>
     </div>
-
 
     <!-- navbar -->
     <div class="mainPageNavbar whiteMoonFont" id="navbar" style="position: fixed;">
