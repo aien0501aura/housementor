@@ -1,0 +1,91 @@
+<html>
+
+<head>
+	<title>Face Counter</title>
+	<script src="https://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<style type="text/css">
+	html {
+		height: 100%;
+		}
+
+	body {
+		background-image: url('public/images/bg.jpg');
+		background-repeat:no-repeat;
+		background-attachment:fixed;
+		background-position:center;
+		background-size:cover;
+        }
+
+
+	.all {
+		padding: 40px 80px;
+		border: 80px  rgb(174, 175, 171);
+		width: 1100px;
+		height: 700px;
+		background-color: rgba(228, 219, 220, 0.5);
+		/* opacity:0.3; */
+		border-radius: 20px;
+		display: block;
+		position:absolute;
+		left:50%;
+		top:50%;
+		margin-top:-375px;
+		margin-left:-625px;
+	}			
+	#DIV1{
+		width:600px;
+		display: inline-block;
+		padding:20px;
+		text-align:center;		
+		border:2px blue ;
+		margin-right:20px;
+		/* float:left; */
+		}
+	#DIV2{
+		width:300px;
+		line-height:100px;
+		border:2px red ;
+		padding:5px 10px;
+		text-align:center;
+		float:right;
+		margin: 60px;
+		}
+</style>
+
+<body>
+<!-- <body bgcolor="#777777"> -->
+	
+	<div class="all">
+		<div id="DIV1">
+			<h1 style="color: whitesmoke;">Face Recognition & Counter</h1>
+			<img src="{{ url_for('video_feed') }}" alt="Stop stream">
+		</div>
+		<div id="DIV2">
+			<h1 style="color: whitesmoke;">Who is at home?</h1>
+			<div style="border:5px rgb(235, 235, 9);background-color: rgb(235, 235, 9, 0.5);border-radius: 20px;">
+				<p id="status" style="font-size: 200%;color: whitesmoke;"></p>
+			</div>
+			
+		</div>
+		
+	</div>
+</body>
+
+
+
+<script>
+	var sleep = 1;
+	var timerID = setInterval(function () {
+		$.post('/status', (data) => {
+			if (data > 0) {
+				$('#status').text('Chieh');
+			} else {
+				$('#status').text('Nobody');
+			}
+		});
+	}, sleep * 1000);
+</script>
+
+</html>
