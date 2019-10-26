@@ -1,0 +1,75 @@
+/* home page link */
+.login, .register, .loginUser , .accountManagement{
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* margin-top: 10px; */
+    /* display: block; */
+}
+
+.login a, .register a, .accountManagement a{
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.register {
+    right: 90px;
+}
+
+.accountManagement{
+    right: 100px;
+}
+
+.loginUser {
+    right: 330px;
+}
+
+
+
+/* home page link */
+
+.loginDiv {
+    width: 452px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* center a div */
+    padding: 10px 40px;
+    background-color: aliceblue;
+    opacity: 0.8;
+    line-height: 120%;
+    vertical-align: center;
+    font-size: 110%;
+}
+
+.loginSubDiv {
+    padding: 10px 0;
+}
+
+.loginSubDiv input {
+    position: absolute;
+    right: 0;
+    margin-right: 40px;
+}
+
+.loginCenter {
+    text-align: center;
+}
+
+.loginDiv .loginBtn {
+    padding: 5px 12px;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    border: 0.5px solid rgb(255, 255, 255);
+}
+
+.loginDiv .loginBtn:hover {
+    color: red;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.importantInfo {
+    color: red;
+}

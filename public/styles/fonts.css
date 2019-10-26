@@ -1,0 +1,19 @@
+@font-face {
+    font-family: MoonBold;
+    src: URL(../fonts/MoonBold.otf);
+}
+
+@font-face {
+    font-family: MoonLight;
+    src: URL(../fonts/MoonLight.otf);
+}
+
+@font-face {
+    font-family: YuGothM;
+    src: URL(../fonts/YuGothM.ttc);
+}
+
+@font-face {
+    font-family: msjh;
+    src: URL(../fonts/msjh.ttc);
+}

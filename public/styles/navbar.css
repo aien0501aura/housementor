@@ -1,0 +1,27 @@
+/* navbar */
+
+.mainPageNavbar {
+    display: block;
+    /* background-image: linear-gradient(rgba(29, 23, 18, 0.9), rgba(68, 3, 3, 0.4)); */
+    background-image: linear-gradient(rgba(29, 23, 18, 0.9), rgba(34, 3, 68, 0.4));
+    box-shadow: 5px 5px 10px 15px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    /* position: fixed; */
+    top: 0;
+    width: 100%;
+}
+
+.navbarText {
+    display: inline-block;
+    list-style-type: none;
+    letter-spacing: 5px;
+    font-size: 130%;
+    padding: 20px 20px;
+    float: right;
+    text-decoration: none;
+    color: white;
+}
+
+.navbarText:hover {
+    color: #702ee9;
+}

@@ -1,0 +1,309 @@
+.PCTitle {
+    left: 9.5%;
+    top: 32%;
+    font-size: 640%;
+    letter-spacing: 26px;
+    -webkit-transform: skew(-24deg);
+}
+
+.PCTitle_M {
+    position: relative;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 1000%;
+    letter-spacing: 26px;
+}
+
+.PCSubTitle {
+    left: 7.7%;
+    top: 45%;
+    font-size: 350%;
+    letter-spacing: 33px;
+    -webkit-transform: skew(-24deg);
+}
+
+
+.PCSubTitle_M {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 610%;
+    letter-spacing: 33px;
+}
+
+.PCText {
+    left: 6.7%;
+    top: 52.3%;
+    font-size: 130%;
+    letter-spacing: 7.5px;
+    -webkit-transform: skew(-24deg);
+}
+.PCText_M {
+    position: relative;
+    text-align: center;
+    padding-right:35px;
+    margin-top: 20px;
+    font-size: 220%;
+    letter-spacing: 7.5px;
+}
+
+.PCbtn {
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+    padding: 13px 50px;
+    /* width: 250px;
+    height: 46px; */
+    border: 0px solid black;
+    border-radius: 23px;
+    background-image: linear-gradient(to right, rgba(92, 2, 2, 0.9), rgba(223, 1, 1, 0.9));
+}
+
+.PCbtn_M {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 80px;
+    padding: 13px 50px;
+    /* width: 250px;
+    height: 46px; */
+    border: 0px solid black;
+    border-radius: 59px;
+    background-image: linear-gradient(to right, rgba(92, 2, 2, 0.9), rgba(223, 1, 1, 0.9));
+    margin: 0 170px;
+}
+
+.PCbtnWT {
+    left: 5%;
+    top: 63%;
+}
+
+.PCbtnWT_M {
+    margin-top: 1350px;
+}
+
+.PCbtnAE {
+    left: 3.5%;
+    top: 73%;
+}
+
+.PCbtnAE_M {
+    margin-top: 100px;
+}
+
+.PCbtnYG {
+    left: 2%;
+    top: 83%;
+}
+
+.PCbtnYG_M {
+    margin-top: 100px;
+}
+
+.PCbtnRecord {
+    right: 2%;
+    top: 83%;
+}
+
+.PCbtnRecord_M {
+    margin-top: 100px;
+}
+
+.PC_D2mask, .PC_D3mask {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.PC_D2title, .PC_D3title {
+    position: absolute;
+    top: 7%;
+    text-align: center;
+    width: 100%;
+    font-size: 400%;
+    letter-spacing: 7.5px;
+}
+
+.PC_D2title_M, .PC_D3title_M {
+    position: absolute;
+    top: 3%;
+    text-align: center;
+    width: 100%;
+    font-size: 400%;
+    letter-spacing: 7.5px;
+}
+
+.PC_D3text {
+    font-size: 350%;
+}
+
+.PC_D3timer {
+    color: red;
+    font-size: 110%;
+}
+
+.PC_D2poseImgs {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.PC_D2poseImgs_M {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.PC_D2poseImg {
+    margin: 50px;
+    margin-top: 308px;
+    width: 300px;
+}
+.PC_D2poseImg_M {
+    margin: 70px;
+    margin-top: 100px;
+    width: 500px;
+}
+
+.PC_D2titleBG, .PC_D3titleBG {
+    background-color: rgba(255, 0, 0, 0.3);
+    padding: 7px 0;
+}
+
+/* correct pose imgs */
+
+.PC_D3correctPoseF, .PC_D3correctPoseL {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    height: 360px;
+    position: absolute;
+    color: white;
+    top: 18%;
+}
+
+.PC_D3correctPoseF_M, .PC_D3correctPoseL_M {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    height: 360px;
+    position: absolute;
+    color: white;
+    top: 8%;
+}
+
+.PC_D3correctPoseF {
+    right: 7%;
+}
+
+.PC_D3correctPoseF_M {
+    left: 5%;
+}
+
+.PC_D3correctPoseL {
+    left: 15.1%;
+}
+
+.PC_D3correctPoseL_M {
+    top: 53.5%;
+    left: 5%;
+}
+
+.PC_D3currentPoseF, .PC_D3currentPoseL {
+    opacity: 0.75;
+    height: 360px;
+    position: absolute;
+    color: white;
+    top: 58.5%;
+}
+
+.PC_D3currentPoseF_M, .PC_D3currentPoseL_M {
+    opacity: 0.75;
+    height: 820px;
+    position: absolute;
+    color: white;
+    top: 22%;
+}
+
+.PC_D3currentPoseF {
+    right: 7%;
+}
+
+.PC_D3currentPoseL {
+    left: 15.1%;
+}
+
+.PC_D3currentPoseF_M {
+    left: 5%;
+}
+
+.PC_D3currentPoseL_M {
+    top: 68%;
+    left: 5%;
+}
+
+.hiddenForm {
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
+.PC_D3plotSampleR{
+    position: absolute;
+    left: 38.3%;
+    top: 25%;
+    width: 450px;
+}
+
+.PC_D3plotSampleB{
+    position: absolute;
+    left: 38.3%;
+    top: 65%;
+    width: 450px;
+}
+
+.PC_D3plotSampleR_M{
+    position: absolute;
+    left: 55%;
+    top: 9%;
+    width: 450px;
+}
+
+.PC_D3plotSampleB_M{
+    position: absolute;
+    left: 55%;
+    top: 54%;
+    width: 450px;
+}
+
+.PC_D4record {
+    padding: 10px 30px;
+    position: absolute;
+    overflow-y:auto;
+    font-family: MoonLight;
+    left: 33%;
+    top: 15%;
+    width: 33%;
+    height: 80%;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.CE_DtitleBG {
+    position: absolute;
+    top: 7%;
+    text-align: center;
+    width: 100%;
+    font-size: 400%;
+    letter-spacing: 7.5px;
+}
+
+.CE_DtitleBG {
+    background-color: rgba(66, 26, 26, 0.432);
+    padding: 7px 0;
+}

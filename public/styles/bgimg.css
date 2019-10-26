@@ -1,0 +1,20 @@
+/* document background-color */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    /* background-color: black; */
+}
+
+.mainPageBGI, .kenPCBGI {
+    position: absolute;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}

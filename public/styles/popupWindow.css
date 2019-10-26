@@ -1,0 +1,352 @@
+/* Button used to open the chat form - fixed at the bottom of the page */
+
+.open-button {
+	background-color: rgb(97, 49, 230);
+	color: white;
+	font-size: 20px;
+	padding: 20px 20px;
+	border: none;
+	border-radius: 37.5px;
+	cursor: pointer;
+	opacity: 0.8;
+	position: fixed;
+	bottom: 120px;
+	right: 40px;
+	width: 75px;
+}
+
+/* ----------------------------------------- */
+
+/* The popup chat - hidden by default */
+
+.chat-popup {
+	display: none;
+	background-color: #702ee9;
+	position: fixed;
+	bottom: 0;
+	right: 15px;
+	border: 3px solid #f1f1f1;
+	border-radius: 20px 20px 0px 0px;
+	/* z-index: 9; */
+}
+
+/* red cancel button */
+
+.chat-popup .btn_cancel {
+	position: relative;
+	display: block;
+	background-color: #b593f3;
+	color: black;
+	font-size: 15px;
+	padding: 5px 10px;
+	margin: 10px;
+	border: none;
+	border-radius: 16px;
+	cursor: pointer;
+	float: right;
+	opacity: 0.8;
+}
+
+/* ----------------------------------------- */
+
+/* dialogue record */
+
+.chat-popup .dialogueRecord {
+	display: block;
+	background-color: white;
+	width: 500px;
+	margin-top: 50px;
+	padding: 10px;
+	max-height: 40%;
+}
+
+/* format the chat bubble */
+
+.chat-popup .dialogueRecord .resFormat {
+	margin-bottom: 10px;
+}
+
+.chat-popup .dialogueRecord .botRes {
+	background-color: #702ee9;
+	/* margin: 10px; */
+	color: white;
+	font-size: 20px;
+	padding: 10px 20px;
+	border-radius: 25px;
+	float: left;
+	margin-right: 220px;
+}
+
+.chat-popup .dialogueRecord .userRes {
+	background-color: #bdbdbd;
+	color: black;
+	font-size: 20px;
+	padding: 10px 20px;
+	border-radius: 25px;
+	float: right;
+	margin-left: 220px;
+}
+
+/* ----------------------------------------- */
+
+/* form container */
+
+.chat-popup .form-container {
+	width: 500px;
+	padding: 10px;
+	display: block;
+	background-color: white;
+}
+
+/* textarea for user input */
+
+.chat-popup .form-container textarea {
+	/* position: fixed; */
+	background: #f1f1f1;
+	resize: none;
+	font-size: 20px;
+	width: 75%;
+	border: none;
+	height: 40px;
+}
+
+/* When the textarea gets focus, do something */
+
+.chat-popup .form-container textarea:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+/* Set a style for the submit/send button */
+
+.chat-popup .form-container .btn {
+	background-color: #702ee9;
+	color: white;
+	height: 40px;
+	padding: 16px 20px;
+	border: none;
+	border-radius: 10px;
+	/* vertical-align: middle; */
+	cursor: pointer;
+	width: 20%;
+	float: right;
+	opacity: 0.8;
+}
+
+/* Add some hover effects to buttons */
+
+.chat-popup .form-container .btn:hover, .open-button:hover {
+	opacity: 1;
+}
+
+/* * {
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Fira Code';
+} */
+
+/* body {
+	height: 100%;
+	background: #95a5a6;
+} */
+
+.chat-box {
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Fira Code';
+	position: absolute;
+	right: 20px;
+	bottom: 0px;
+	background: white;
+	width: 512px;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.chat-head {
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Fira Code';
+	width: inherit;
+	height: 45px;
+	background: #702ee9;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.chat-head h2 {
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Fira Code';
+	color: white;
+	padding: 8px;
+	display: inline-block;
+}
+
+.chat-head img {
+	cursor: pointer;
+	float: right;
+	width: 25px;
+	margin: 10px;
+}
+
+.chat-body {
+	/* height: 355px; */
+	height: 700px;
+	width: inherit;
+	overflow: auto;
+	margin-bottom: 45px;
+}
+
+.chat-text {
+	position: fixed;
+	bottom: 0px;
+	height: 45px;
+	width: inherit;
+}
+
+.chat-text textarea {
+	width: inherit;
+	height: inherit;
+	box-sizing: border-box;
+	border: 1px solid #bdc3c7;
+	padding: 10px;
+	resize: none;
+}
+
+.chat-text textarea:active, .chat-text textarea:focus, .chat-text textarea:hover {
+	border-color: royalblue;
+}
+
+.msg-send {
+	background: #702ee9;
+	/* word-break: break-all; */
+}
+
+.msg-receive {
+	background: #702ee9;
+	/* word-break: break-all; */
+}
+
+.msg-send {
+	width: 200px;
+	/* height: 35px; */
+	min-height: 35px;
+	padding: 5px 5px 5px 10px;
+	margin: 10px 250px;
+	border-radius: 3px;
+	line-height: 30px;
+	position: relative;
+	color: white;
+}
+
+.msg-receive {
+	width: 200px;
+	/* height: 35px; */
+	padding: 5px 5px 5px 10px;
+	margin: 10px 25px;
+	border-radius: 3px;
+	line-height: 30px;
+	position: relative;
+	color: white;
+}
+
+.msg-receive:before {
+	content: '';
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border: 15px solid;
+	border-color: transparent #702ee9 transparent transparent;
+	left: -29px;
+	top: 7px;
+}
+
+.msg-send:after {
+	content: '';
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border: 15px solid;
+	border-color: transparent transparent transparent #702ee9;
+	right: -29px;
+	top: 7px;
+}
+
+.msg-receive:hover, .msg-send:hover {
+	opacity: .9;
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+.mainPageNavbar .popup {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* The actual popup */
+
+.mainPageNavbar .popup .popuptext {
+	visibility: hidden;
+	width: 420px;
+	background-color: rgb(97, 49, 230);
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 8px 0;
+	position: absolute;
+	z-index: 1;
+	top: 125%;
+	left: 50%;
+	margin-left: -210px;
+}
+
+/* Popup arrow */
+
+.mainPageNavbar .popup .popuptext::before {
+	content: "";
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	margin-left: -10px;
+	/* margin-right: 5px; */
+	border-width: 10px;
+	border-style: solid;
+	border-color: rgb(97, 49, 230) transparent transparent transparent;
+	-moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+/* Toggle this class - hide and show the popup */
+
+.mainPageNavbar .popup .show {
+	visibility: visible;
+	-webkit-animation: fadeIn 1s;
+	animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

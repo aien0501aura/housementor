@@ -1,0 +1,47 @@
+.whiteMoonFont {
+    color: white;
+    font-family: MoonLight;
+    position: absolute;
+}
+
+.whiteYuGothM {
+    color: white;
+    font-family: YuGothM;
+    position: absolute;
+}
+.msjh {
+    /* color: white; */
+    font-family: msjh;
+}
+
+.mainPageTitle {
+    left: 5%;
+    top: 44%;
+    font-size: 640%;
+    letter-spacing: 22px;
+}
+
+.mainPageSubTitle {
+    left: 5%;
+    top: 59.5%;
+    font-size: 240%;
+    letter-spacing: 8px;
+}
+
+.mainPageKeyWords {
+    left: 5%;
+    bottom: 5%;
+    font-size: 150%;
+    letter-spacing: 10px;
+    line-height: 200%;
+}
+
+.mainPageText {
+    left: 38%;
+    bottom: 5%;
+    font-size: 150%;
+    letter-spacing: 10px;
+    line-height: 200%;
+    letter-spacing: 8px;
+}
+
