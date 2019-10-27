@@ -34,7 +34,32 @@
     <button class="whiteMoonFont PCbtn PCbtnWT">Weight Training</button>
     <button class="whiteMoonFont PCbtn PCbtnAE">Aerobic Exercise</button>
     <button class="whiteMoonFont PCbtn PCbtnYG">YOGA</button>
+    <!-- navbar -->
+    <div class="mainPageNavbar whiteMoonFont" id="navbar" style="position: fixed;">
+        <a class="navbarText" href="/housementor/register">Register</a>
+        <a class="navbarText" href="/housementor/login">Log in</a>
+        <a class="navbarText popup" onclick="popEmailLink()">Contact us
+            <span class="popuptext whiteYuGothM" id="myPopup">aien0501aura@gmail.com</span>
+        </a>
+        <a class="navbarText" href="/housementor/solution">Solution</a>
+        <a class="navbarText" href="/housementor/aboutus">About us</a>
+        <a class="navbarText" href="/housementor/">Home</a>
+    </div>
+    <script>
+        // When the user clicks on div, open the popup
+        function popEmailLink() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+        $("#navbar").css("background-image", "linear-gradient(rgba(29, 23, 18, 0.9), rgba(68, 3, 3, 0.4))");
+    </script>
+    <style>
+        .navbarText:hover {
+            color: red;
+        }
+    </style>
     <div class="PC_D3mask"> </div>
+
     <a data-fancybox data-width="1280" data-height="720" href="public/videos/ken_final_video.mp4" class="whiteMoonFont PCbtn" style="position: absolute; left: 44.5%; top: 58.5%; text-decoration: none; color: white;">
         Demo Video
     </a>
@@ -145,30 +170,7 @@
         }
     </script>
 
-    <!-- navbar -->
-    <div class="mainPageNavbar whiteMoonFont" id="navbar" style="position: fixed;">
-        <a class="navbarText" href="/housementor/register">Register</a>
-        <a class="navbarText" href="/housementor/login">Log in</a>
-        <a class="navbarText popup" onclick="popEmailLink()">Contact us
-            <span class="popuptext whiteYuGothM" id="myPopup">aien0501aura@gmail.com</span>
-        </a>
-        <a class="navbarText" href="/housementor/solution">Solution</a>
-        <a class="navbarText" href="/housementor/aboutus">About us</a>
-        <a class="navbarText" href="/housementor/">Home</a>
-    </div>
-    <script>
-        // When the user clicks on div, open the popup
-        function popEmailLink() {
-            var popup = document.getElementById("myPopup");
-            popup.classList.toggle("show");
-        }
-        $("#navbar").css("background-image", "linear-gradient(rgba(29, 23, 18, 0.9), rgba(68, 3, 3, 0.4))");
-    </script>
-    <style>
-        .navbarText:hover {
-            color: red;
-        }
-    </style>
+    
 </body>
 
 </html>
