@@ -300,7 +300,615 @@
             font-size: 15px;
         }
     </style>
+    <div style="width: 400px;height: 400px; position: absolute; top: 37%; left: 15.5%;display:flex; align-items:center; justify-content:center;">
+        <img style="position: absolute; color:aliceblue; width: auto; height: auto; max-width: 100%; max-height: 100%;" src="./public/images/Grilled_cheese_sandwich.jpg" alt="predict image" width="50%"><br>
+        </div>
+        <b style="position: absolute; color:aliceblue; top: 80%; left:15.5%; font-size: 15px; font-family: Yu Gothic UI Semibold;">Recommendation : </b>
+        <b id="recommended01" class="recommended" style="top: 80%;text-transform: capitalize;">Tiramisu</b>
+        <b id="recommended02" class="recommended" style="top: 82%;text-transform: capitalize;">Pulled pork sandwich</b>
+        <b id="recommended03" class="recommended" style="top: 84%;text-transform: capitalize;">Peking duck</b>
+        <section class="performance-facts" style="position: absolute;top: 25%;left:37.5%;background-color: white;">
+            <header class="performance-facts__header">
+                <h1 class="performance-facts__title" id="foodname">Grilled cheese sandwich</h1>
+                <h2 style="margin: 0 0 0.25rem 0;">Nutrition Facts</h2>
+                <!-- <p>Serving Size 1/2 cup (about 82g)</p> -->
+                <p> Servings Per Recipe: <span id="SPR">2</span></p>
+            </header>
+            <table class="performance-facts__table">
+                <thead>
+                    <tr>
+                        <th colspan="3" class="small-info">Amount Per Serving</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="2">
+                            <b>Calories</b>
+                            <span id="Calories">0</span>
+                        </th>
+                        <td>
+                            Calories from Fat
+                            <span id="CaloriesfromFat">0</span>
+                        </td>
+                    </tr>
+                    <tr class="thick-row">
+                        <td colspan="3" class="small-info">
+                            <b>% Daily Value*</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <b>Total Fat</b>
+                            <span id="totalfat">0</span>g
+                        </th>
+                        <td>
+                            <b id="totalfatpercent">0</b><b>%</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="blank-cell">
+                        </td>
+                        <th>
+                            Saturated Fat
+                            <span id="saturatedfat">0</span>g
+                        </th>
+                        <td>
+                            <!-- <b id="saturatedfat%">0</b><b>%</b> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="blank-cell">
+                        </td>
+                        <th>
+                            Trans Fat
+                            0g
+                        </th>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <b>Cholesterol</b>
+                            <span id="cholesterol">0</span>mg
+                        </th>
+                        <td>
+                            <!-- <b>18%</b> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <b>Sodium</b>
+                            <span id="sodium">0</span>mg
+                        </th>
+                        <td>
+                            <!-- <b>2%</b> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <b>Total Carbohydrate</b>
+                            <span id="totalcarbohydrates">0</span>g
+                        </th>
+                        <td>
+                            <b id="totalcarbohydratespercent">0</b><b>%</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="blank-cell">
+                        </td>
+                        <th>
+                            Dietary Fiber
+                            <span id="fiber">0</span>g
+                        </th>
+                        <td>
+                            <!-- <b>4%</b> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="blank-cell">
+                        </td>
+                        <th>
+                            Sugars
+                            <span id="sugar">0</span>g
+                        </th>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr class="thick-end">
+                        <th colspan="2">
+                            <b>Protein</b>
+                            <span id="protein">0</span>g
+                        </th>
+                        <td>
+                            <b id="proteinpercent">0</b><b>%</b>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <table class="performance-facts__table--grid">
+                <tbody>
+                    <tr>
+                        <td colspan="2">
+                            Vitamin A
+                            <span id="vitaminA">0</span> IU
+                        </td>
+                        <td>
+                            Vitamin C
+                            <span id="vitaminC">0</span> mg
+                        </td>
+                    </tr>
+                    <tr class="thin-end">
+                        <td colspan="2">
+                            Calcium
+                            <span id="calcium">0</span> mg
+                        </td>
+                        <td>
+                            Iron
+                            <span id="iron">0</span> mg
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <!-- <p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or
+                    lower depending on your calorie needs:</p> -->
+        
+            <!-- <table class="performance-facts__table--small small-info">
+                    <thead>
+                        <tr>
+                            <td colspan="2"></td>
+                            <th>Calories:</th>
+                            <th>2,000</th>
+                            <th>2,500</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="2">Total Fat</th>
+                            <td>Less than</td>
+                            <td>65g</td>
+                            <td>80g</td>
+                        </tr>
+                        <tr>
+                            <td class="blank-cell"></td>
+                            <th>Saturated Fat</th>
+                            <td>Less than</td>
+                            <td>20g</td>
+                            <td>25g</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Cholesterol</th>
+                            <td>Less than</td>
+                            <td>300mg</td>
+                            <td>300 mg</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Sodium</th>
+                            <td>Less than</td>
+                            <td>2,400mg</td>
+                            <td>2,400mg</td>
+                        </tr>
+                        <tr>
+                            <th colspan="3">Total Carbohydrate</th>
+                            <td>300g</td>
+                            <td>375g</td>
+                        </tr>
+                        <tr>
+                            <td class="blank-cell"></td>
+                            <th colspan="2">Dietary Fiber</th>
+                            <td>25g</td>
+                            <td>30g</td>
+                        </tr>
+                    </tbody>
+                </table> -->
+        
+            <p class="small-info">
+                Calories per gram:
+            </p>
+            <p class="small-info text-center">
+                Fat 9
+                •
+                Carbohydrate 4
+                •
+                Protein 4
+            </p>
+        
+        </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/kute.js/1.6.2/kute.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/kute.js/1.6.2/kute.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/kute.js/1.6.2/kute-text.min.js"></script>
+        <script>
+            function capitalizeFirstLetter(string) {
+            capitalword = string.charAt(0).toUpperCase() + string.slice(1);
+            capitalword = capitalword.split("_").join(" ")
+            return capitalword;
+            };
+        
+            var heading = document.querySelector("#foodname");
+            var animateHeading = KUTE.to(
+                heading,
+                { text: capitalizeFirstLetter("grilled_cheese_sandwich") },
+                { duration: 2500 }
+            );
+            animateHeading.start();
+        
+            var Calorieschange = document.querySelector("#Calories");
+            var CaloriesNumberTween = KUTE.to(Calorieschange, {
+                number: 400.0
+                }, {
+                duration: 2500
+            }); // this assumes it will start from current number or from 0
+            CaloriesNumberTween.start();
+        
+            var SPRchange = document.querySelector("#SPR");
+            var SPRNumberTween = KUTE.to(SPRchange, {
+                number: 2
+                }, {
+                duration: 2500
+            }); // this assumes it will start from current number or from 0
+            SPRNumberTween.start();
+        
+            var SPRchange = document.querySelector("#SPR");
+            var SPRNumberTween = KUTE.to(SPRchange, {
+                number: 2
+                }, {
+                duration: 2500
+            }); // this assumes it will start from current number or from 0
+            SPRNumberTween.start();
+        
+            var CFFchange = document.querySelector("#CaloriesfromFat");
+            var CFFNumberTween = KUTE.to(CFFchange, {
+                number: 28.3 * 9
+            }, {
+                duration: 2500
+            }); // this assumes it will start from current number or from 0
+            CFFNumberTween.start();
+        
+            var total_fat_change = document.querySelector("#totalfat");
+            var total_fat_NumberTween = KUTE.to(total_fat_change, {
+                number: 28.3
+                }, {
+                duration: 2500
+            }); // this assumes it will start from current number or from 0
+            total_fat_NumberTween.start();
+        
+            var saturatedfatchange = document.querySelector("#saturatedfat");
+            var saturatedfatNumberTween = KUTE.to(saturatedfatchange, {
+                number: 17.0
+                }, {
+                duration: 2500
+            }); // this assumes it will start from current number or from 0
+            saturatedfatNumberTween.start();
+        
+            var cholesterolchange = document.querySelector("#cholesterol");
+            var cholesterolNumberTween = KUTE.to(cholesterolchange, {
+                number: 76.0
+                }, {
+                duration: 2500
+            }); // this assumes it will start from current number or from 0
+            cholesterolNumberTween.start();
+        
+            var sodiumchange = document.querySelector("#sodium");
+            var sodiumNumberTween = KUTE.to(sodiumchange, {
+                number: 639.0
+                }, {
+                duration: 2500
+            }); // this assumes it will start from current number or from 0
+            sodiumNumberTween.start();
+        
+            var totalcarbohydrateschange = document.querySelector("#totalcarbohydrates");
+            var totalcarbohydratesNumberTween = KUTE.to(totalcarbohydrateschange, {
+                number: 25.7
+                }, {
+                duration: 2500
+            }); // this assumes it will start from current number or from 0
+            totalcarbohydratesNumberTween.start();
+        
+            var fiberchange = document.querySelector("#fiber");
+            var fiberNumberTween = KUTE.to(fiberchange, {
+                number: 1.2
+                }, {
+                duration: 2500
+            }); // this assumes it will start from current number or from 0
+            fiberNumberTween.start();
+        
+            var sugarchange = document.querySelector("#sugar");
+            var sugarNumberTween = KUTE.to(sugarchange, {
+                number: 2.0
+                }, {
+                duration: 2500
+            }); // this assumes it will start from current number or from 0
+            sugarNumberTween.start();
+        
+            var proteinchange = document.querySelector("#protein");
+            var proteinNumberTween = KUTE.to(proteinchange, {
+                number: 11.1
+                }, {
+                duration: 2500
+            }); // this assumes it will start from current number or from 0
+            proteinNumberTween.start();
+        
+            var vitaminAchange = document.querySelector("#vitaminA");
+            var vitaminANumberTween = KUTE.to(vitaminAchange, {
+                number: 816.0
+                }, {
+                duration: 2500
+            }); // this assumes it will start from current number or from 0
+            vitaminANumberTween.start();
+        
+            var vitaminCchange = document.querySelector("#vitaminC");
+            var vitaminCNumberTween = KUTE.to(vitaminCchange, {
+                number: 0.0
+                }, {
+                duration: 2500
+            }); // this assumes it will start from current number or from 0
+            vitaminCNumberTween.start();
+        
+            var calciumchange = document.querySelector("#calcium");
+            var calciumNumberTween = KUTE.to(calciumchange, {
+                number: 285.0
+                }, {
+                duration: 2500
+            }); // this assumes it will start from current number or from 0
+            calciumNumberTween.start();
+        
+            var ironchange = document.querySelector("#iron");
+            var ironNumberTween = KUTE.to(ironchange, {
+                number: 2.0
+                }, {
+                duration: 2500
+            }); // this assumes it will start from current number or from 0
+            ironNumberTween.start();
+        
+            
+            
+        
+            var total_fatpercent_change = document.querySelector("#totalfatpercent");
+            var total_fatpercent_NumberTween = KUTE.to(total_fatpercent_change, {
+                number: 28.3/65*100
+            }, {
+                duration: 2500
+            }, ); // this assumes it will start from current number or from 0
+            total_fatpercent_NumberTween.start();
+        
+        
+            var totalcarbohydratespercentchange = document.querySelector("#totalcarbohydratespercent");
+            var totalcarbohydratespercentNumberTween = KUTE.to(totalcarbohydratespercentchange, {
+                number: 25.7/300*100
+            }, {
+                duration: 2500
+            }, ); // this assumes it will start from current number or from 0
+            totalcarbohydratespercentNumberTween.start();
+        
+            
+        
+        
+            var proteinpercentchange = document.querySelector("#proteinpercent");
+            var proteinpercentNumberTween = KUTE.to(proteinpercentchange, {
+                number: 11.1/50*100
+            }, {
+                duration: 2500
+            }, ); // this assumes it will start from current number or from 0
+            proteinpercentNumberTween.start();
+        
+        
+        
+        
+        
+        </script>
     <div class="whiteMoonFont CE_DtitleBG">Food Colarie - Daily</div>
+    <style>
+        /* @import url("https://fonts.googleapis.com/css?family=Teko:300"); */
+        #chartdiv {
+            width: 23%;
+            height: 565px;
+            position: absolute;
+            font-family: Yu Gothic UI Semibold,"微軟正黑體";
+            top: 27%;
+            left: 61%;
+            background-color: rgb(255, 255, 255);
+            
+        }
+    </style>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script>
+        am4core.ready(function () {
+
+            // Themes begin
+            am4core.useTheme(am4themes_myTheme);
+            am4core.useTheme(am4themes_animated);
+            function am4themes_myTheme(target) {
+                if (target instanceof am4core.ColorSet) {
+                    target.list = [
+                        am4core.color("#FF8000"),
+                        am4core.color("#FF9933"),
+                        am4core.color("#FFB266"),
+                        am4core.color("#FFCC99"),
+                        am4core.color("#FFE5CC"),
+                        am4core.color("#FFFFFF")
+                    ];
+                }
+            }
+
+
+
+            // Themes end
+
+            var chart = am4core.create("chartdiv", am4charts.XYChart);
+            chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+            // chart.defaultState.animationDuration = 5000;
+            // chart.hiddenState.animationDuration = 5000;
+
+
+
+            chart.data = [
+
+                {
+                    category: "Calories",
+                    value1: 400.0,
+
+                    
+                    value2: 844.0 - 400.0,
+                    
+
+                    value3: 2000 - 844.0,
+                    // value3: 3,
+
+                },
+                {
+                    category: "Fat",
+                    value1: 28.3,
+
+                    
+                    value2: 49.400000000000006 - 28.3,
+                    
+
+                    value3: 65-49.400000000000006,
+                    // value3: 3,
+
+                },
+                {
+                    category: "Carbohydrates",
+                    value1: 25.7,
+
+                    
+                    value2: 70.4 - 25.7,
+                    
+
+                    value3: 300 - 70.4,
+                    // value3: 4,
+
+                },
+                {
+                    category: "Proteins",
+                    value1: 11.1,
+
+                    
+                    value2: 27.5 - 11.1,
+                    
+
+                    value3: 50 - 27.5,
+                    // value3: 6,
+
+                }
+            ];
+
+
+            chart.colors.step = 2;
+            chart.padding(20, 10, 10, 10);
+            chart.legend = new am4charts.Legend();
+
+
+
+
+
+            var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+            categoryAxis.dataFields.category = "category";
+            categoryAxis.renderer.grid.template.location = 0;
+            categoryAxis.renderer.minGridDistance = 1;
+            categoryAxis.renderer.labels.template.rotation = -45
+            categoryAxis.renderer.labels.template.verticalCenter = "middle";
+            categoryAxis.renderer.labels.template.horizontalCenter = "right";
+            categoryAxis.renderer.labels.template.fontSize = 15;
+
+
+
+            var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+            valueAxis.min = 0;
+            valueAxis.max = 100;
+            valueAxis.strictMinMax = true;
+            valueAxis.calculateTotals = true;
+            valueAxis.renderer.minWidth = 50;
+            valueAxis.renderer.minGridDistance = 100;
+
+            var series1 = chart.series.push(new am4charts.ColumnSeries());
+            series1.columns.template.width = am4core.percent(80);
+            series1.columns.template.tooltipText =
+                "{name}: {valueY.totalPercent.formatNumber('#.0')}%";
+            series1.name = "本次攝入";
+            series1.dataFields.categoryX = "category";
+            series1.dataFields.valueY = "value1";
+            series1.dataFields.valueYShow = "totalPercent";
+            series1.dataItems.template.locations.categoryX = 0.5;
+            series1.stacked = true;
+            series1.tooltip.pointerOrientation = "vertical";
+
+            var bullet1 = series1.bullets.push(new am4charts.LabelBullet());
+            bullet1.interactionsEnabled = false;
+            bullet1.label.text = "{valueY.totalPercent.formatNumber('#.0')}%";
+            bullet1.label.fill = am4core.color("#ffffff");
+            bullet1.locationY = 0.5;
+
+
+
+            
+            var series2 = chart.series.push(new am4charts.ColumnSeries());
+            series2.columns.template.width = am4core.percent(80);
+            series2.columns.template.tooltipText =
+                "{name}: {valueY.totalPercent.formatNumber('#.0')}%";
+            series2.name = "本日已攝入";
+            series2.dataFields.categoryX = "category";
+            series2.dataFields.valueY = "value2";
+            series2.dataFields.valueYShow = "totalPercent";
+            series2.dataItems.template.locations.categoryX = 0.5;
+            series2.stacked = true;
+            series2.tooltip.pointerOrientation = "vertical";
+
+
+            var bullet2 = series2.bullets.push(new am4charts.LabelBullet());
+            bullet2.interactionsEnabled = false;
+            bullet2.label.text = "{valueY.totalPercent.formatNumber('#.0')}%";
+            bullet2.locationY = 0.5;
+            bullet2.label.fill = am4core.color("#ffffff");
+            
+
+
+            var series3 = chart.series.push(new am4charts.ColumnSeries());
+            series3.columns.template.width = am4core.percent(80);
+            series3.columns.template.tooltipText =
+                "{name}: {valueY.totalPercent.formatNumber('#.0')}%";
+            series3.name = "不足";
+            series3.dataFields.categoryX = "category";
+            series3.dataFields.valueY = "value3";
+            series3.dataFields.valueYShow = "totalPercent";
+            series3.dataItems.template.locations.categoryX = 0.5;
+            series3.stacked = true;
+            series3.tooltip.pointerOrientation = "vertical";
+
+
+
+            var bullet3 = series3.bullets.push(new am4charts.LabelBullet());
+            bullet3.interactionsEnabled = false;
+            bullet3.label.text = "{valueY.totalPercent.formatNumber('#.0')}%";
+            bullet3.locationY = 0.5;
+            bullet3.label.fill = am4core.color("#ffffff");
+
+            // var series3 = chart.series.push(new am4charts.ColumnSeries());
+            // series3.columns.template.width = am4core.percent(80);
+            // series3.columns.template.tooltipText =
+            //   "{name}: {valueY.totalPercent.formatNumber('#.00')}%";
+            // series3.name = "Series 3";
+            // series3.dataFields.categoryX = "category";
+            // series3.dataFields.valueY = "value3";
+            // series3.dataFields.valueYShow = "totalPercent";
+            // series3.dataItems.template.locations.categoryX = 0.5;
+            // series3.stacked = true;
+            // series3.tooltip.pointerOrientation = "vertical";
+
+            // var bullet3 = series3.bullets.push(new am4charts.LabelBullet());
+            // bullet3.interactionsEnabled = false;
+            // bullet3.label.text = "{valueY.totalPercent.formatNumber('#.00')}%";
+            // bullet3.locationY = 0.5;
+            // bullet3.label.fill = am4core.color("#ffffff");
+
+            // chart.scrollbarX = new am4core.Scrollbar();
+
+        }); // end am4core.ready()
+    </script>
+    <div id="chartdiv"></div>
     <script>
         $("#navbar").css("background-image", "linear-gradient(rgba(29, 23, 18, 0.9), rgba(255, 127, 7, 0.4))");
         $("#navbar").css("font-size", "medium");
