@@ -1,0 +1,312 @@
+<html>
+
+<head>
+    <title>Face Counter</title>
+    <meta name="robots" content="noindex" />
+    <meta name="AdsBot-Google" content="noindex, nofollow" />
+    <link rel="stylesheet" href="public/styles/fonts.css">
+    <link rel="stylesheet" href="public/styles/navbar.css">
+    <link rel="stylesheet" href="public/styles/mainPage.css">
+    <link rel="stylesheet" href="public/styles/bgimg.css">
+    <link rel="stylesheet" href="public/styles/scrollbar.css">
+    <link rel="stylesheet" href="public/styles/memberSystem.css">
+    <link rel="stylesheet" href="public/styles/kenPC.css">
+    <link rel="stylesheet" href="public/styles/popupWindow.css">
+    <link rel="stylesheet" href="public/styles/menu.css">
+    <!-- facnybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <!-- jquery.js -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="public/lib/popupWindow.js"></script>
+    <!-- facnybox -->
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="https://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        body {
+            font-size: small;
+            line-height: 1.4;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .performance-facts {
+            border: 1px solid black;
+            margin: 20px;
+            float: left;
+            width: 360px;
+            padding: 0.5rem;
+        }
+
+        .performance-facts table {
+            border-collapse: collapse;
+        }
+
+        .performance-facts__title {
+            font-weight: bold;
+            font-size: 2rem;
+            margin: 0 0 0.25rem 0;
+        }
+
+        .performance-facts__header {
+            border-bottom: 10px solid black;
+            padding: 0 0 0.25rem 0;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .performance-facts__header p {
+            margin: 0;
+        }
+
+        .performance-facts__table,
+        .performance-facts__table--small,
+        .performance-facts__table--grid {
+            width: 100%;
+        }
+
+        .performance-facts__table thead tr th,
+        .performance-facts__table--small thead tr th,
+        .performance-facts__table--grid thead tr th,
+        .performance-facts__table thead tr td,
+        .performance-facts__table--small thead tr td,
+        .performance-facts__table--grid thead tr td {
+            border: 0;
+        }
+
+        .performance-facts__table th,
+        .performance-facts__table--small th,
+        .performance-facts__table--grid th,
+        .performance-facts__table td,
+        .performance-facts__table--small td,
+        .performance-facts__table--grid td {
+            font-weight: normal;
+            text-align: left;
+            padding: 0.25rem 0;
+            border-top: 1px solid black;
+            white-space: nowrap;
+        }
+
+        .performance-facts__table td:last-child,
+        .performance-facts__table--small td:last-child,
+        .performance-facts__table--grid td:last-child {
+            text-align: right;
+        }
+
+        .performance-facts__table .blank-cell,
+        .performance-facts__table--small .blank-cell,
+        .performance-facts__table--grid .blank-cell {
+            width: 1rem;
+            border-top: 0;
+        }
+
+        .performance-facts__table .thick-row th,
+        .performance-facts__table--small .thick-row th,
+        .performance-facts__table--grid .thick-row th,
+        .performance-facts__table .thick-row td,
+        .performance-facts__table--small .thick-row td,
+        .performance-facts__table--grid .thick-row td {
+            border-top-width: 5px;
+        }
+
+        .small-info {
+            font-size: 0.7rem;
+        }
+
+        .performance-facts__table--small {
+            border-bottom: 1px solid #999;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .performance-facts__table--small thead tr {
+            border-bottom: 1px solid black;
+        }
+
+        .performance-facts__table--small td:last-child {
+            text-align: left;
+        }
+
+        .performance-facts__table--small th,
+        .performance-facts__table--small td {
+            border: 0;
+            padding: 0;
+        }
+
+        .performance-facts__table--grid {
+            margin: 0 0 0.5rem 0;
+        }
+
+        .performance-facts__table--grid td:last-child {
+            text-align: left;
+        }
+
+        .performance-facts__table--grid td:last-child::before {
+            content: "•";
+            font-weight: bold;
+            margin: 0 0.25rem 0 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .thick-end {
+            border-bottom: 10px solid black;
+        }
+
+        .thin-end {
+            border-bottom: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- navbar -->
+    <div class="mainPageNavbar whiteMoonFont" id="navbar" style="position: fixed;">
+        <a class="navbarText" href="/housementor/register">Register</a>
+        <a class="navbarText" href="/housementor/login">Log in</a>
+        <a class="navbarText popup" onclick="popEmailLink()">Contact us
+            <span class="popuptext whiteYuGothM" id="myPopup">aien0501aura@gmail.com</span>
+        </a>
+        <a class="navbarText" href="/housementor/solution">Solution</a>
+        <a class="navbarText" href="/housementor/aboutus">About us</a>
+        <a class="navbarText" href="/housementor/">Home</a>
+    </div>
+    <script>
+        // When the user clicks on div, open the popup
+        function popEmailLink() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+        $("#navbar").css("background-image", "linear-gradient(rgba(29, 23, 18, 0.9), rgba(68, 3, 3, 0.4))");
+    </script>
+    <style>
+        .navbarText:hover {
+            color: red;
+        }
+    </style>
+    <img class="FDBG" src="images/GoofyPC/bg_2a.png" alt="wood">
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js">
+        $("div#file-upload").dropzone({
+            url: "/file/post"
+        });
+    </script>
+    <label for="food_pic_upload" style="position: absolute; 
+    color:aliceblue; 
+    top: 25%;
+    background-color:rgba(66, 22, 9, 0.5);
+    padding:10px;
+    margin-bottom:5px;
+    position: absolute; 
+    left: 15%;
+    width: 1325px;
+    height: 592px;">
+    </label>
+    <style>
+        .file {
+            position: relative;
+            display: inline-block;
+            background: #FFCC99;
+            border: 3px solid rgb(247, 127, 8);
+            border-radius: 4px;
+            padding: 4px 12px;
+            overflow: hidden;
+            color: rgb(247, 127, 8);
+            text-decoration: none;
+            text-indent: 0;
+            line-height: 20px;
+            font-family: MoonLight;
+            font-weight: bold;
+            font-size: 20px;
+            width: 173px;
+            text-align: center;
+        }
+
+        .file input {
+            position: absolute;
+            font-size: 100px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+        .file:hover {
+            background: rgb(247, 127, 8);
+            border-color: #FFCC99;
+            color: #FFCC99;
+            text-decoration: none;
+        }
+    </style>
+    <input title="history" type="image" src="../icon/food_history.png"
+        style="position: absolute; top: 27%;left:26.5%;width: 100px;" alt="send" name="history" id="history"
+        onclick='window.open("food_history","popup","width=850,height=500,toolbar=no,status=no,resize=no,location=no, menubar=no");' />
+    <!-- <img title="history" style="position: absolute; top: 84%;left:16%;width: 50px;" src="../icon/food_history.png" > -->
+    <form method="POST" enctype="multipart/form-data" style="position: absolute; 
+                                                             color:aliceblue; 
+                                                             top: 26%;
+                                                             padding:10px;
+                                                             margin-bottom:5px;
+                                                             position: absolute; 
+                                                             left: 15%;
+                                                             width: 220px;">
+        <a href="javascript:;" class="file">Click to upload<input type="file" name="file" id="food_pic_upload"></a>
+
+        <a href="javascript:;" class="file">Recognize<input type="submit" value="Recognize" name="submit"></a>
+        <!-- <a href="javascript:;" class="file">reset<input type="reset" value="reset" name="submit"></a> -->
+
+        <br>
+        <div style="width: 200px;word-break: break-all; text-align:center;"><b class="showFileName"
+                style="font-family: MoonLight;"></b></div>
+        <div style="width: 200px;word-break: break-all; text-align:center;"><b class="fileerrorTip"
+                style="font-family: 微軟正黑體;"></b></div>
+    </form>
+    <script>
+        $(".file").on("change", "input[type='file']", function () {
+            var filePath = $(this).val();
+            if (filePath.indexOf("jpg") != -1 || filePath.indexOf("png") != -1 || filePath.indexOf("jpeg") != -1 || filePath.indexOf("gif") != -1 || filePath.indexOf("bmp") != -1) {
+                $(".fileerrorTip").html("").hide();
+                var arr = filePath.split('\\');
+                var fileName = arr[arr.length - 1];
+                $(".showFileName").html(fileName);
+            } else {
+                $(".showFileName").html("");
+                $(".fileerrorTip").html("您上傳文件類型有誤！").show();
+                return false
+            }
+        })
+
+    </script>
+    <style>
+        img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .recommended {
+            position: absolute;
+            color: aliceblue;
+            left: 23%;
+            font-family: Yu Gothic UI Semibold;
+            font-size: 15px;
+        }
+    </style>
+    <div class="whiteMoonFont CE_DtitleBG">Food Colarie - Daily</div>
+    <script>
+        $("#navbar").css("background-image", "linear-gradient(rgba(29, 23, 18, 0.9), rgba(255, 127, 7, 0.4))");
+        $("#navbar").css("font-size", "medium");
+    </script>
+    <style>
+        .navbarText:hover {
+            color: orangered;
+        }
+    </style>
+</body>
+
+</html>
